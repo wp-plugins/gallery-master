@@ -1,15 +1,19 @@
-=== Gallery Master - Responsive Albums Plugin ===
+=== Gallery Master - Responsive Photo Albums Plugin ===
 Contributors: techprodigy
-Tags: add album, add gallery, add picture, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, best image slider, best portfolio, bilder, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, galary, galeri, galerie, galerij, galery, gallary, Galleria, gallerie, galleries, gallery, gallery decription, gallery image, gallery lightbox, Gallery Plugin, gallery shortcode, gallery slider, gelary, gellary, gellery, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image gallery, image gallery plugin, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, links, media, media gallery, multiple pictures, nextgen gallery, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photos, photoset, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio plugin, Post, posts, responsive gallery, responsive image gallery, responsive slider, responsive slideshow, responsive wordpress photo gallery, seo, seo image, shortcode, sidebar, Simple gallery, slide show, slideshow, thumbnail, twitter, upload images, upload photos, video gallery, view images, view pictures, website gallery, widget, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin, wp gallery plugins
+Tags: add album, add gallery, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, comments, filterable gallery, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, fullscreen slider, galeri, galerie, Galleria, galleries, gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, gallery slider, image, image album, image gallery, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, media, multiple pictures, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photography, photos, photoset, picture, pictures, responsive, responsive gallery, responsive wordpress photo gallery, sidebar, Simple gallery, slide, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, upload images, upload photos, video gallery, videos, view images, view pictures, vimeo, watermarking, watermarks, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, youtube
 Requires at least: 3.4
 Tested up to: 4.2.2
-Stable tag: 1.0
+Stable tag: 1.0.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Gallery Master is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
+Gallery Master Photo Gallery is an advanced wordpress plugin for adding and editing images for different views. It is fully responsive.
 
 == Description ==
+
+**Gallery Master** creates 100% responsive FREE WordPress photo gallery in minutes. Easy to customize and various views.
+
+[Gallery Master](http://tech-prodigy.org/)
 
 Create responsive and filterable portfolios with ease on your website.
 
