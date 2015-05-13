@@ -1,6 +1,6 @@
 === Gallery Master - Responsive Albums Plugin ===
 Contributors: techprodigy
-Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
+Tags: admin, gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.4
 Tested up to: 4.2.2
 Stable tag: 1.0
