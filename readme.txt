@@ -25,7 +25,9 @@ It is fully responsive. The product includes plugin for adding image galleries a
 
 You can add images, providing detailed descriptions, organize the galleries into different albums.
 
-= Features =
+Considering the large number of galleries in WordPress, Tech Prodigy will improve and enhance the functionality of Gallery Master on Regular Basis, and keep on providing not only a solid Gallery Product but even solid customer support.
+
+= Gallery Master Features =
 
 * Create any amount of albums in the gallery.
 * Add description to each album and then title & description to each image in your album.
@@ -39,7 +41,7 @@ You can add images, providing detailed descriptions, organize the galleries into
 * User-friendly AJAX admin
 * Upload different types of media
 
-= Pro Version = 
+= Gallery Master Pro Version = 
 
 * Domain Installation (x1 change anytime)
 * Responsive Gallery
