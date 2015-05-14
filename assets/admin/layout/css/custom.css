@@ -1023,3 +1023,12 @@ format('woff'),url(../wp-includes/fonts/dashicons.ttf) format("truetype"),url(..
     color: #fff;
     margin: 0px !important;
 }
+
+.page-sidebar-menu li.sidebar-search-wrapper a
+{
+    border: none;
+}
+.gm-logo
+{
+    padding: 0px !important;
+}

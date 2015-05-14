@@ -192,20 +192,20 @@ else {
 							var post_id = "<?php echo isset($array_gallery_details["post_id"]) ? intval($array_gallery_details["post_id"]) : "";?>";
 
 							jQuery.post(ajaxurl,
-								{
-									ux_gallery_title : gallery_title,
-									ux_gallery_desc : gallery_description,
-									is_gallery_id : gallery_id,
-									is_post_id : post_id,
-									param : "save_gallery_details",
-									action : "gallery_master_action_library",
-									_wp_nonce : "<?php echo $basic_details;?>"
-								},
-								function(data)
-								{
-									var id = jQuery.trim(data);
-									gm_proceed_next(2,id);
-								});
+							{
+								ux_gallery_title : gallery_title,
+								ux_gallery_desc : gallery_description,
+								is_gallery_id : gallery_id,
+								is_post_id : post_id,
+								param : "save_gallery_details",
+								action : "gallery_master_action_library",
+								_wp_nonce : "<?php echo $basic_details;?>"
+							},
+							function(data)
+							{
+								var id = jQuery.trim(data);
+								gm_proceed_next(2,id);
+							});
 						}
 					});
 					<?php
@@ -255,23 +255,23 @@ else {
 									var image_target_name = file.target_name;
 									var image_name = file.name;
 									jQuery.post(ajaxurl,
-										{
-											ux_img_target_name : image_target_name,
-											ux_image_name : image_name,
-											upload_type : "system_upload",
-											id : gallery_id,
-											ux_file_type : "image",
-											param : "upload_images",
-											action : "gallery_master_action_library",
-											_wp_nonce : "<?php echo $upload_media_files;?>"
-										},
-										function(data)
-										{
-											var insert_id = jQuery.trim(data);
-											create_dynamic_tr(image_target_name,image_name,"","","",insert_id);
-											display_action();
-											load_sidebar_content();
-										});
+									{
+										ux_img_target_name : image_target_name,
+										ux_image_name : image_name,
+										upload_type : "system_upload",
+										id : gallery_id,
+										ux_file_type : "image",
+										param : "upload_images",
+										action : "gallery_master_action_library",
+										_wp_nonce : "<?php echo $upload_media_files;?>"
+									},
+									function(data)
+									{
+										var insert_id = jQuery.trim(data);
+										create_dynamic_tr(image_target_name,image_name,"","","",insert_id);
+										display_action();
+										load_sidebar_content();
+									});
 								}
 							}
 						});
@@ -300,12 +300,12 @@ else {
 							if(array_delete_images.length > 0)
 							{
 								jQuery.post(ajaxurl,
-									{
-										delete_data: encodeURIComponent(array_delete_images),
-										param: "delete_images",
-										action: "gallery_master_action_library",
-										_wp_nonce: "<?php echo $delete_media_files;?>"
-									});
+								{
+									delete_data: encodeURIComponent(array_delete_images),
+									param: "delete_images",
+									action: "gallery_master_action_library",
+									_wp_nonce: "<?php echo $delete_media_files;?>"
+								});
 							}
 
 							if(oTable.fnGetNodes().length > 1)
@@ -338,27 +338,24 @@ else {
 									}
 								});
 								jQuery.post(ajaxurl,
-									{
-										gallery_data: encodeURIComponent(JSON.stringify(array_gallery_data)),
-										param: "update_images",
-										action: "gallery_master_action_library",
-										_wp_nonce: "<?php echo $update_media_files;?>"
-									},
-									function ()
-									{
-										gm_proceed_next(3, gallery_id);
-									});
+								{
+									gallery_data: encodeURIComponent(JSON.stringify(array_gallery_data)),
+									param: "update_images",
+									action: "gallery_master_action_library",
+									_wp_nonce: "<?php echo $update_media_files;?>"
+								},
+								function ()
+								{
+									gm_proceed_next(3, gallery_id);
+								});
 							}
 							else
 							{
-								var confirm_delete = "<?php _e("Are you sure you want to continue without uploading images/videos?", gallery_master)?>";
-								bootbox.confirm(confirm_delete, function (result)
+								var confirm_proceed = confirm("<?php _e("Are you sure you want to continue without uploading images/videos?", gallery_master)?>");
+								if (confirm_proceed == true)
 								{
-									if (result == true)
-									{
-										gm_proceed_next(3, gallery_id);
-									}
-								});
+									gm_proceed_next(3, gallery_id);
+								}
 							}
 						}
 					});
@@ -481,17 +478,14 @@ else {
 					{
 						function gm_delete_image(control)
 						{
-							var confirm_delete = "<?php _e("Are you sure you want to delete this Images?", gallery_master)?>";
-							bootbox.confirm(confirm_delete, function (result)
+							var confirm_delete = confirm("<?php _e("Are you sure you want to delete this Images?", gallery_master)?>");
+							if (confirm_delete == true)
 							{
-								if (result == true)
-								{
-									var row = jQuery(control).closest("tr");
-									var image_id = jQuery(control).attr("control_id");
-									array_delete_images.push(image_id);
-									oTable.fnDeleteRow(row[0]);
-								}
-							});
+								var row = jQuery(control).closest("tr");
+								var image_id = jQuery(control).attr("control_id");
+								array_delete_images.push(image_id);
+								oTable.fnDeleteRow(row[0]);
+							}
 						}
 					}
 					<?php
@@ -533,29 +527,26 @@ else {
 					{
 						function delete_gallery(gallery_id)
 						{
-							var confirm_delete = "<?php _e("Are you sure you want to delete this Album?", gallery_master)?>";
-							bootbox.confirm(confirm_delete, function (result)
+							var confirm_delete = confirm("<?php _e("Are you sure you want to delete this Album?", gallery_master)?>");
+							if (confirm_delete == true)
 							{
-								if (result == true)
+								jQuery.post(ajaxurl,
 								{
-									jQuery.post(ajaxurl,
-										{
-											id : gallery_id,
-											param : "delete_gallery",
-											action : "gallery_master_action_library",
-											_wp_nonce : "<?php echo $delete_gallery_files;?>"
-										},
-										function()
-										{
-											overlay_loading("delete_gallery");
-											setTimeout(function()
-											{
-												remove_overlay();
-												window.location.reload();
-											}, 3000);
-										});
-								}
-							});
+									id : gallery_id,
+									param : "delete_gallery",
+									action : "gallery_master_action_library",
+									_wp_nonce : "<?php echo $delete_gallery_files;?>"
+								},
+								function()
+								{
+									overlay_loading("delete_gallery");
+									setTimeout(function()
+									{
+										remove_overlay();
+										window.location.reload();
+									}, 3000);
+								});
+							}
 						}
 					}
 
@@ -719,10 +710,11 @@ else {
 					?>
 					jQuery("#ux_li_feature_request").addClass("active");
 					var features_array = [];
-					var url = "http://tech-prodigy.org/request.php";
+					var url = "http://tech-prodigy.org/feedbacks.php";
 					var gm_frm_feature_request = jQuery("#ux_frm_feature_requests");
 					var error_feature_request = jQuery(".alert-danger", gm_frm_feature_request);
 					var success_feature_request = jQuery(".alert-success", gm_frm_feature_request);
+					var domain_url = "<?php echo site_url(); ?>";
 
 					gm_frm_feature_request.validate
 					({
@@ -772,13 +764,12 @@ else {
 						{
 							features_array.push(jQuery("#ux_txt_your_name").val());
 							features_array.push(jQuery("#ux_txt_email_address").val());
+							features_array.push(domain_url);
 							features_array.push(jQuery("#ux_txtarea_feature_request").val());
 							jQuery.post(url,
 							{
 								data :JSON.stringify(features_array),
-								param: "gm_feature_requests",
-								action: "feature_requests",
-								_wp_nonce:"<?php echo $send_request;?>"
+								param: "gm_feature_requests"
 							},
 							function()
 							{

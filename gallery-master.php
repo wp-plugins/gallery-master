@@ -3,7 +3,7 @@
 Plugin Name: Gallery Master
 Plugin URI: http://tech-prodigy.org
 Description: Gallery Master is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
-Version: 1.0
+Version: 1.0.1
 Author: techprodigy
 Author URI: http://tech-prodigy.org
 */
@@ -25,7 +25,6 @@ if (!defined("GALLERY_MASTER_MONTH_DIR")) define("GALLERY_MASTER_MONTH_DIR", GAL
 if (!defined("GALLERY_MASTER_DATE_DIR")) define("GALLERY_MASTER_DATE_DIR", GALLERY_MASTER_MONTH_DIR.$today_date."/");
 if (!defined("GALLERY_MASTER_UPLOAD_DIR")) define("GALLERY_MASTER_UPLOAD_DIR", GALLERY_MASTER_DATE_DIR."uploads/");
 if (!defined("GALLERY_MASTER_THUMBS_DIR")) define("GALLERY_MASTER_THUMBS_DIR", GALLERY_MASTER_DATE_DIR."thumbs/");
-if (!defined("GALLERY_MASTER_ALBUM_DIR")) define("GALLERY_MASTER_ALBUM_DIR", GALLERY_MASTER_DATE_DIR."album-thumbs/");
 if (!defined("GALLERY_MASTER_UPLOAD_PATH")) define("GALLERY_MASTER_UPLOAD_PATH", $running_year."/".$running_month."/".$today_date."/");
 if (!defined("GALLERY_MASTER_MAIN_URL")) define("GALLERY_MASTER_MAIN_URL", content_url()."/gallery-master/");
 if (!defined("GALLERY_MASTER_THUMBS_URL")) define("GALLERY_MASTER_THUMBS_URL", content_url()."/gallery-master/".GALLERY_MASTER_UPLOAD_PATH."thumbs/");
@@ -67,11 +66,6 @@ if(!function_exists("gallery_master_thumbnail_folder"))
 		if (!is_dir(GALLERY_MASTER_THUMBS_DIR))
 		{
 			wp_mkdir_p(GALLERY_MASTER_THUMBS_DIR);
-		}
-
-		if(!is_dir(GALLERY_MASTER_ALBUM_DIR))
-		{
-			wp_mkdir_p(GALLERY_MASTER_ALBUM_DIR);
 		}
 	}
 }
@@ -196,15 +190,11 @@ if(!function_exists("gallery_master_backend_scripts_calls"))
 		wp_enqueue_script("jquery");
 		wp_enqueue_script("plupload.full.min.js",plugins_url("assets/global/plugins/pluploader/js/plupload.full.min.js",__FILE__),array("jquery-ui-draggable","jquery-ui-sortable","jquery-ui-dialog","jquery-ui-widget","jquery-ui-progressbar"),false);
 		wp_enqueue_script("jquery.ui.plupload.js",plugins_url("assets/global/plugins/pluploader/js/jquery.ui.plupload.js",__FILE__));
-		wp_enqueue_script("metronic.js",plugins_url("assets/global/plugins/metronic/metronic.js",__FILE__));
 		wp_enqueue_script("bootstrap.js",plugins_url("assets/global/plugins/bootstrap/js/bootstrap.js",__FILE__));
 		wp_enqueue_script("bootstrap-tabdrop.js",plugins_url("assets/global/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js",__FILE__));
 		wp_enqueue_script("jquery.validate.js",plugins_url("assets/global/plugins/validation/jquery.validate.js",__FILE__));
 		wp_enqueue_script("jquery.dataTables.min.js",plugins_url("assets/global/plugins/datatables/media/js/jquery.dataTables.min.js",__FILE__));
 		wp_enqueue_script("dataTables.bootstrap.js",plugins_url("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js",__FILE__));
-		wp_enqueue_script("bootbox.js",plugins_url("assets/global/plugins/bootbox/bootbox.js",__FILE__));
-		wp_enqueue_script("bootstrap-modal.js",plugins_url("assets/global/plugins/modal/js/bootstrap-modal.js",__FILE__));
-		wp_enqueue_script("bootstrap-modalmanager.js",plugins_url("assets/global/plugins/modal/js/bootstrap-modalmanager.js",__FILE__));
 		wp_enqueue_script("toastr.min.js",plugins_url("assets/global/plugins/bootstrap-toastr/toastr.min.js",__FILE__));
 
 	}
@@ -245,9 +235,6 @@ if(!function_exists("gallery_master_backend_css_calls"))
 		wp_enqueue_style("gallery-master-custom.css", plugins_url("assets/admin/layout/css/custom.css",__FILE__));
 		wp_enqueue_style("pricing-table.css", plugins_url("assets/admin/pages/css/pricing-table.css",__FILE__));
 		wp_enqueue_style("dataTables.bootstrap.css",plugins_url("assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css",__FILE__));
-		wp_enqueue_style("bootstrap-modal.css",plugins_url("assets/global/plugins/modal/css/bootstrap-modal.css",__FILE__));
-		wp_enqueue_style("bootstrap-modal-bs3patch.css",plugins_url("assets/global/plugins/modal/css/bootstrap-modal-bs3patch.css",__FILE__));
-		wp_enqueue_style("font-awesome.css", plugins_url("assets/global/plugins/font-awesome/css/font-awesome.css",__FILE__));
 		wp_enqueue_style("toastr.min.css", plugins_url("assets/global/plugins/bootstrap-toastr/toastr.min.css",__FILE__));
 	}
 }
@@ -509,6 +496,12 @@ function gallery_master_plugin_autoUpdate()
 	catch(Exception $e)
 	{
 	}
+}
+
+$gallery_version = get_option("gallery-master-key");
+if($gallery_version == "" || $gallery_version == "1.0")
+{
+	add_action("admin_init", "plugin_install_script_for_gallery_master");
 }
 
 //--------------------------------------------------------------------------------------------------------------//

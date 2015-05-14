@@ -37,10 +37,6 @@ else {
 		$upload_media_files = wp_create_nonce("manage_files_uploading");
 		$update_media_files = wp_create_nonce("update_gallery_images");
 		$delete_media_files = wp_create_nonce("delete_gallery_images");
-		$copy_media_files = wp_create_nonce("copy_gallery_images");
-		$move_media_files = wp_create_nonce("move_gallery_images");
-		$rotate_media_files = wp_create_nonce("rotate_images");
-		$flip_media_files = wp_create_nonce("flip_images");
 		?>
 		<div class="page-content-wrapper">
 			<div class="page-content">
@@ -329,60 +325,6 @@ else {
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div id="ux_popup_bulk_actions" class="modal fade" tabindex="-1" data-width="760">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-				<h4 class="modal-title" id="ux_title_bulk_action"><?php _e("Copy selected images to Destination Gallery", gallery_master); ?></h4>
-			</div>
-			<div class="modal-body">
-				<div class="form-group">
-					<label class="control-label"><?php _e("Destination Gallery",gallery_master); ?> :
-						<i class="icon-question tooltips" data-original-title="<?php _e("Choose your destination Gallery.", gallery_master) ?>" data-placement="right"></i>
-						<span class="required" aria-required="true">*</span>
-					</label>
-					<div class="input-icon right">
-						<select class="form-control" name="ux_ddl_choose_gallery" id="ux_ddl_choose_gallery">
-							<option value=""> <?php _e("Select Destination Gallery", gallery_master); ?>  </option>
-							<?php
-							foreach ($galleries as $row)
-							{
-								if($row->gallery_id != $gallery_id)
-								{
-									?>
-									<option value="<?php echo intval($row->gallery_id); ?>"><?php echo stripcslashes(urldecode($row->gallery_meta_value)) ?></option>
-								<?php
-								}
-							}
-							?>
-						</select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label"><?php _e("Copy Image",gallery_master); ?> :
-						<i class="icon-question tooltips" data-original-title="<?php _e("Choose options which you want to copy.", gallery_master) ?>" data-placement="right"></i>
-						<span class="required" aria-required="true">*</span>
-					</label>
-					<div class="input-icon right">
-						<label class="control-label">
-							<input type="checkbox" id="ux_chk_copy_title" checked="checked" name="ux_chk_copy_title"/><?php _e("Title", gallery_master); ?>
-						</label>
-						<label class="control-label">
-							<input type="checkbox" id="ux_chk_copy_desc" checked="checked" name="ux_chk_copy_desc" style="margin-left: 5px;"/><?php _e("Description", gallery_master); ?>
-						</label>
-						<label class="control-label">
-							<input type="checkbox" id="ux_chk_copy_alt" checked="checked" name="ux_chk_copy_alt" style="margin-left: 5px;"/><?php _e("Alt Text", gallery_master); ?>
-						</label>
-						<label class="control-label">
-							<input type="checkbox" id="ux_chk_copy_url" checked="checked" name="ux_chk_copy_url" style="margin-left: 5px;"/><?php _e("url to redirect", gallery_master); ?>
-						</label>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" data-dismiss="modal" class="btn btn-default"><?php _e("Close",gallery_master); ?></button>
-				<button type="button" id="btn_perform_bulk" name="btn_perform_bulk" class="btn blue"><?php _e("Save changes",gallery_master); ?></button>
 			</div>
 		</div>
 	<?php

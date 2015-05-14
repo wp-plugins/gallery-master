@@ -34,7 +34,6 @@ else
 	}
 	else
 	{
-		$send_request = wp_create_nonce("gallery_master_feature_request");
 		?>
 		<div class="page-content-wrapper">
 			<div class="page-content">

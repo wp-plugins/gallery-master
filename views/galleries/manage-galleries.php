@@ -97,48 +97,48 @@ else
 														<input type="checkbox" id="ux_chk_items_<?php echo $row["gallery_id"];?>" name="ux_chk_items_<?php echo $row["gallery_id"];?>" value="<?php echo $row["gallery_id"];?>" >
 													</td>
 													<td class="thumbnail-text">
-                                                        <a href="admin.php?page=gm_save_basic_details&gallery_id=<?php echo $row["gallery_id"];?>">
-                                                            <?php
-                                                            switch(count($thumb_pics))
-                                                            {
-                                                                case 0:
-                                                                    ?>
-                                                                    <img id="ux_gm_img" class="gallery_cover_image" src="<?php echo plugins_url("assets/admin/images/gallery-cover.png",dirname(dirname(__FILE__)));?>"/>
-                                                                    <?php
-                                                                break;
+														<a href="admin.php?page=gm_save_basic_details&gallery_id=<?php echo $row["gallery_id"];?>">
+															<?php
+															switch(count($thumb_pics))
+															{
+																case 0:
+																	?>
+																	<img id="ux_gm_img" class="gallery_cover_image" src="<?php echo plugins_url("assets/admin/images/gallery-cover.png",dirname(dirname(__FILE__)));?>"/>
+																	<?php
+																break;
 
-                                                                case 4:
-                                                                    ?>
-                                                                    <div class="gm_image_overlay" style="width: 220px;">
-                                                                        <div class= "gallery_content_overlay_txt">
-                                                                            <div class="gm-image-div">
-                                                                                <div class="gm-section">
-                                                                                    <span class="hover-thumbnails">
-                                                                                        <span class="first-thumbnail">
-                                                                                            <img class="" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[0];?>" style="width: 90px; height: 90px;">
-                                                                                        </span>
-                                                                                        <span class="second-thumbnail">
-                                                                                            <img class="" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[1];?>" style="width: 50px; height: 50px;">
-                                                                                        </span>
-                                                                                        <span class="third-thumbnail">
-                                                                                            <img class="" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[2];?>" style="width: 70px; height: 70px;">
-                                                                                        </span>
-                                                                                    </span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <img id="ux_gm_img" class="gallery_cover_image" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[3];?>"/>
-                                                                    </div>
-                                                                    <?php
-                                                                break;
-                                                                default :
-                                                                    ?>
-                                                                    <img id="ux_gm_img" class="gallery_cover_image" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[0];?>"/>
-                                                                    <?php
-                                                                break;
-                                                            }
-                                                            ?>
-                                                        </a>
+																case 4:
+																	?>
+																	<div class="gm_image_overlay" style="width: 220px;">
+																		<div class= "gallery_content_overlay_txt">
+																			<div class="gm-image-div">
+																				<div class="gm-section">
+																					<span class="hover-thumbnails">
+																						<span class="first-thumbnail">
+																							<img class="" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[0];?>" style="width: 90px; height: 90px;">
+																						</span>
+																						<span class="second-thumbnail">
+																							<img class="" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[1];?>" style="width: 50px; height: 50px;">
+																						</span>
+																						<span class="third-thumbnail">
+																							<img class="" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[2];?>" style="width: 70px; height: 70px;">
+																						</span>
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																		<img id="ux_gm_img" class="gallery_cover_image" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[3];?>"/>
+																	</div>
+																	<?php
+																break;
+																default :
+																	?>
+																	<img id="ux_gm_img" class="gallery_cover_image" src="<?php echo GALLERY_MASTER_MAIN_URL.$thumb_pics[0];?>"/>
+																	<?php
+																break;
+															}
+															?>
+														</a>
 														<a href="admin.php?page=gm_save_basic_details&gallery_id=<?php echo $row["gallery_id"];?>" class="tooltips" data-original-title="<?php _e("Please click on this button, If you would like to Edit this Gallery.", gallery_master)?>" data-placement="right" id="ux_edit_gallery">
 															<i class="icon-note tooltips" ></i> <?php _e("Edit", gallery_master)?>
 														</a> |

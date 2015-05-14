@@ -97,33 +97,6 @@ else {
 				 * @return array|bool
 				 */
 
-				function process_album_thumb_uploading($image, $width, $height)
-				{
-					$temp_image_path = GALLERY_MASTER_UPLOAD_DIR . $image;
-					$temp_image_name = $image;
-					list(, , $temp_image_type) = getimagesize($temp_image_path);
-					if ($temp_image_type === NULL) {
-						return false;
-					}
-					$uploaded_image_path = GALLERY_MASTER_UPLOAD_DIR . $temp_image_name;
-					move_uploaded_file($temp_image_path, $uploaded_image_path);
-					$type = explode(".", $image);
-					$thumbnail_image_path = GALLERY_MASTER_ALBUM_DIR . preg_replace("{\\.[^\\.]+$}", "." . $type[1], $temp_image_name);
-
-					$result = $this->process_thumbs_generation($uploaded_image_path, $thumbnail_image_path, $width, $height);
-					return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
-				}
-
-				/**
-				 * Function to Crop  Thumbnails for Editing Purposes
-				 *
-				 * @since   1.0
-				 * @param $image
-				 * @param $width
-				 * @param $height
-				 * @return array|bool
-				 */
-
 				function process_file_uploading($image, $width, $height)
 				{
 					$temp_image_path = GALLERY_MASTER_UPLOAD_DIR . $image;
@@ -229,11 +202,11 @@ else {
 					}
 
 					if (!is_dir($thumbnail_image_path) && $thumbnail_image_path != '.' && $thumbnail_image_path != '..') {
-						if (exif_imagetype($thumbnail_image_path) == IMAGETYPE_JPEG)
+						if ($source_image_type == IMAGETYPE_JPEG)
 						{
 							$this->optimize_jpeg($thumbnail_image_path);
 						}
-						elseif (exif_imagetype($thumbnail_image_path) == IMAGETYPE_PNG)
+						elseif ($source_image_type == IMAGETYPE_PNG)
 						{
 							$this->optimize_png($thumbnail_image_path);
 						}

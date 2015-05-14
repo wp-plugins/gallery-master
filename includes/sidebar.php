@@ -41,7 +41,9 @@ else
 		<div class="page-sidebar navbar-collapse collapse">
 			<ul class="page-sidebar-menu" data-slide-speed="200">
 				<li class="sidebar-search-wrapper" style="padding:20px;text-align:center">
-					<img src="<?php echo GALLERY_MASTER_BK_PLUGIN_URL . "/assets/admin/images/gallery-master-logo.png"?>" width="200px"/>
+					<a class="gm-logo" href="http://tech-prodigy.org/" target="_blank">
+						<img src="<?php echo GALLERY_MASTER_BK_PLUGIN_URL . "/assets/admin/images/gallery-master-logo.png"?>" width="200px"/>
+					</a>
 				</li>
 				<li class="" id="ux_li_galleries">
 					<a href="javascript:;">

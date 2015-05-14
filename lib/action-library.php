@@ -114,15 +114,7 @@ else
 						$file_type = esc_attr($_REQUEST["ux_file_type"]);
 						$ux_img_target_name = $file_type == "image" ? esc_attr($_REQUEST["ux_img_target_name"]) : esc_attr(urldecode($_REQUEST["ux_img_target_name"]));
 						$upload_type = esc_attr($_REQUEST["upload_type"]);
-						if($upload_type == "wp_upload")
-						{
-							$ux_img_target_name = basename($ux_img_target_name);
-							$attachment_id = intval($_REQUEST["attachment_Id"]);
-							$src = get_attached_file($attachment_id);
-							$destination = GALLERY_MASTER_UPLOAD_DIR.$ux_img_target_name;
 
-							$helper_functions->copy_files($src,$destination);
-						}
 						$helper_functions->process_file_uploading($ux_img_target_name,200,160);
 
 						$array_insert_data["parent_id"] = intval($_REQUEST["id"]);

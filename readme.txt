@@ -3,7 +3,7 @@ Contributors: techprodigy
 Tags: add album, add gallery, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, comments, filterable gallery, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, fullscreen slider, galeri, galerie, Galleria, galleries, gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, gallery slider, image, image album, image gallery, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, media, multiple pictures, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photography, photos, photoset, picture, pictures, responsive, responsive gallery, responsive wordpress photo gallery, sidebar, Simple gallery, slide, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, upload images, upload photos, video gallery, videos, view images, view pictures, vimeo, watermarking, watermarks, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, youtube
 Requires at least: 3.4
 Tested up to: 4.2.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -75,6 +75,17 @@ Please email all your queries/issues at support@tech-prodigy.org
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 (14th May 2015) =
 
-Initial Version Release
+* Header Improved.
+* Removed Unwanted Css Files
+* Removed Unwanted Js Files
+* Minor Bugs Fixed
+* Added Demo Album at Install of a Script.
+* Feedbacks Form Fixed
+* Shortcode Improved.
+* Datatables Pagination Fixed.
+
+= 1.0.0 (13th May 2015) =
+
+* Initial Version Release - Gallery Master

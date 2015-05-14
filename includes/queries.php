@@ -101,7 +101,7 @@ else
 			switch (esc_attr($_REQUEST["page"]))
 			{
 				case "gallery_master":
-
+					
 					$manage_gallery = $wpdb->get_results
 					(
 						$wpdb->prepare
@@ -200,13 +200,6 @@ else
 							inner join ".gallery_master_galleries()." on  ".gallery_master_meta().".gallery_id = ".gallery_master_galleries().".gallery_id where ".gallery_master_meta().".gallery_meta_key =%s",
 							"gallery_title"
 						)
-					);
-				break;
-
-				case "gm_licensing":
-					$gm_licensing = $wpdb->get_row
-					(
-						"SELECT * FROM " . gallery_master_licensing()
 					);
 				break;
 			}
