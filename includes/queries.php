@@ -101,7 +101,113 @@ else
 			switch (esc_attr($_REQUEST["page"]))
 			{
 				case "gallery_master":
-					
+
+					if(!function_exists("check_configuration"))
+					{
+						function check_configuration( $con = true, $x = "0", $y = "0" )
+						{
+							if( ! function_exists( "memory_get_usage")) return "";
+
+							$server_memory_limit = 0;
+							$ini_memory_limit = gallery_convert_bytes( ini_get( "memory_limit" ) );
+							$php_configuration = gallery_convert_bytes( get_cfg_var( "memory_limit" ) );
+
+							if ( $ini_memory_limit && $php_configuration ) $server_memory_limit = min( $ini_memory_limit, $php_configuration );
+							elseif($ini_memory_limit) $server_memory_limit = $ini_memory_limit;
+							else $server_memory_limit = $php_configuration;
+
+							if ( ! $server_memory_limit) return "";
+
+							$free_memory = $server_memory_limit - memory_get_usage( true );
+							$image_pixels = gallery_get_minisize() * gallery_get_minisize() * 3 / 4;
+
+							$bytes_per_pixel = $server_memory_limit / ( 1024 * 1024 );
+							$factor_result = "6.00" - "0.58" * ( $bytes_per_pixel / 104 );
+
+							$max_image_pixel = ( $free_memory / $factor_result ) - $image_pixels;
+
+							if ( $max_image_pixel < 0 ) return "";
+
+							if ( $x && $y )
+							{
+								if ($x * $y <= $max_image_pixel) $result = true;
+								else $result = false;
+							}
+							else
+							{
+
+								$max_x = sqrt($max_image_pixel / 12) * 4;
+								$max_y = sqrt($max_image_pixel / 12) * 3;
+								if($con)
+								{
+									$result = "<br />".sprintf(__( "Based on your server memory limit you should not upload images larger then <strong>%d x %d (%2.1f MP)</strong>", gallery_master), $max_x, $max_y, $max_image_pixel / ( 1024 * 1024 ));
+								}
+								else
+								{
+									$result["maxx"] = $max_x;
+									$result["maxy"] = $max_y;
+									$result["maxp"] = $max_image_pixel;
+								}
+							}
+							return $result;
+						}
+					}
+
+					if(!function_exists("gallery_convert_bytes"))
+					{
+						function gallery_convert_bytes($value)
+						{
+							if (is_numeric($value))
+							{
+								return max("0",$value);
+							}
+							else
+							{
+								$value_length = strlen($value);
+								$value_string = substr($value, 0, $value_length - 1);
+								$unit = strtolower(substr($value, $value_length - 1));
+								switch ($unit)
+								{
+									case "k":
+										$value_string *= 1024;
+										break;
+									case "m":
+										$value_string *= 1048576;
+										break;
+									case "g":
+										$value_string *= 1073741824;
+										break;
+								}
+								return max("0", $value_string);
+							}
+						}
+					}
+
+					if(!function_exists("gallery_get_minisize"))
+					{
+						function gallery_get_minisize()
+						{
+							$result = "100";
+							$result = ceil($result / 25) * 25;
+							return $result;
+						}
+					}
+
+					if ( ! function_exists( "imagecreatefromjpeg" ) )
+					{
+						_e( "There is a serious misconfiguration in your servers PHP config. Function imagecreatefromjpeg() does not exist. You will encounter problems when uploading photos and not be able to generate thumbnail images. Ask your hosting provider to add GD support with a minimal version 1.8.", gallery_master );
+					}
+
+					$max_upload_files = ini_get( "max_file_uploads" );
+					$max_files_upload = $max_upload_files;
+					if ( $max_upload_files < "1" ) {
+						$max_files_upload = __( "unknown", gallery_master );
+						$max_upload_files = "15";
+					}
+					$max_files_size = ini_get( "upload_max_filesize" );
+					$max_files_time = ini_get( "max_input_time" );
+					if ( $max_files_time < "1" ) $max_files_time = __( "unknown", gallery_master );
+
 					$manage_gallery = $wpdb->get_results
 					(
 						$wpdb->prepare

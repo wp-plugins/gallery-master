@@ -46,6 +46,12 @@ else
 							<div class="portlet-body form">
 								<form id="ux_frm_manage_galleries">
 									<div class="form-body">
+										<div class="note note-warning">
+											<?php echo( sprintf( __( "<b>Notice:</b> Your server allows you to upload <b>%s</b> files of maximum total <b>%s</b> bytes and allows <b>%s</b> seconds to complete.", gallery_master ), $max_files_upload, $max_files_size, $max_files_time));?>
+											<?php _e( "<br />If your request exceeds these limitations, it will fail, probably without an errormessage.", gallery_master); ?>
+											<?php _e( "<br />Additionally your hosting provider may have set other limitations on uploading files.", gallery_master); ?>
+											<?php echo check_configuration();?>
+										</div>
 										<div class="table-margin-top">
 											<select id="ux_ddl_bulk_action" name="ux_ddl_bulk_action" class="input-small">
 												<option value=""><?php _e("Bulk Action", gallery_master); ?></option>

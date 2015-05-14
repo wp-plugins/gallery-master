@@ -427,9 +427,9 @@ if(!function_exists("extract_short_code_for_gallery_master_images"))
 
 		include GALLERY_MASTER_BK_PLUGIN_DIR . "users-views/include-after.php";
 
-		$gallery_bank_output_album = ob_get_clean();
+		$gallery_master_output = ob_get_clean();
 		wp_reset_query();
-		return $gallery_bank_output_album;
+		return $gallery_master_output;
 	}
 }
 
