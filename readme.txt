@@ -1,4 +1,4 @@
-=== Gallery Master - Responsive Photo Albums Plugin ===
+=== Gallery Master - Responsive Galleries/Albums ===
 Contributors: techprodigy
 Tags: add album, add gallery, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, comments, filterable gallery, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, fullscreen slider, galeri, galerie, Galleria, galleries, gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, gallery slider, image, image album, image gallery, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, media, multiple pictures, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photography, photos, photoset, picture, pictures, responsive, responsive gallery, responsive wordpress photo gallery, sidebar, Simple gallery, slide, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, upload images, upload photos, video gallery, videos, view images, view pictures, vimeo, watermarking, watermarks, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, youtube
 Requires at least: 3.4
@@ -13,8 +13,9 @@ Gallery Master Photo Gallery is an advanced wordpress plugin for adding and edit
 
 **Gallery Master** creates 100% responsive FREE WordPress photo gallery in minutes. Easy to customize and various views.
 
-*[Gallery Master](http://tech-prodigy.org/)
-*[Purchase Gallery Master](http://tech-prodigy.org/pricing/)
+* [Gallery Master](http://tech-prodigy.org/)
+
+* [Purchase Gallery Master](http://tech-prodigy.org/pricing/)
 
 **Create responsive and filterable portfolios with ease on your website.**
 
