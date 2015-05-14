@@ -19,6 +19,11 @@ Gallery Master Photo Gallery is an advanced wordpress plugin for adding and edit
 
 **Create responsive and filterable portfolios with ease on your website.**
 
+**Gallery Master**  is an advanced wordpress plugin with a list of tools and options for adding and editing images for different views.
+
+It is fully responsive. The product includes plugin for adding image galleries and albums to posts and pages. 
+
+You can add images, providing detailed descriptions, organize the galleries into different albums.
 
 = Features =
 
