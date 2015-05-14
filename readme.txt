@@ -13,8 +13,8 @@ Gallery Master Photo Gallery is an advanced wordpress plugin for adding and edit
 
 **Gallery Master** creates 100% responsive FREE WordPress photo gallery in minutes. Easy to customize and various views.
 
-[Gallery Master](http://tech-prodigy.org/)
-[Purchase Gallery Master](http://tech-prodigy.org/pricing/)
+*[Gallery Master](http://tech-prodigy.org/)
+*[Purchase Gallery Master](http://tech-prodigy.org/pricing/)
 
 **Create responsive and filterable portfolios with ease on your website.**
 
