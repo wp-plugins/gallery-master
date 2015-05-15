@@ -29,7 +29,7 @@ Considering the large number of galleries in WordPress, Tech Prodigy will improv
 
 = Gallery Master Features =
 
-* Create any amount of albums in the gallery.
+* Create upto 3 galleries with unlimited images.
 * Add description to each album and then title & description to each image in your album.
 * Upoad any number of photos to each album in the gallery.
 * Add Single Gallery to your page or post using a shortcode.
