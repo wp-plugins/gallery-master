@@ -478,7 +478,7 @@ else {
 					{
 						function gm_delete_image(control)
 						{
-							var confirm_delete = confirm("<?php _e("Are you sure you want to delete this Images?", gallery_master)?>");
+							var confirm_delete = confirm("<?php _e("Are you sure you want to delete this Image?", gallery_master)?>");
 							if (confirm_delete == true)
 							{
 								var row = jQuery(control).closest("tr");
@@ -527,7 +527,7 @@ else {
 					{
 						function delete_gallery(gallery_id)
 						{
-							var confirm_delete = confirm("<?php _e("Are you sure you want to delete this Album?", gallery_master)?>");
+							var confirm_delete = confirm("<?php _e("Are you sure you want to delete this Gallery?", gallery_master)?>");
 							if (confirm_delete == true)
 							{
 								jQuery.post(ajaxurl,

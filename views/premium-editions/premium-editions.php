@@ -64,9 +64,6 @@ else
 															<i class="icon icon-close red-icon"></i><?php _e("Support Multisite",gallery_master)?>
 														</li>
 														<li>
-															<i class="icon icon-check"></i><?php _e("Unlimited Albums",gallery_master)?>
-														</li>
-														<li>
 															<i class="icon icon-check"></i><?php _e("Unlimited Galleries",gallery_master)?>
 														</li>
 														<li>
@@ -98,9 +95,6 @@ else
 														</li>
 														<li>
 															<i class="icon icon-check"></i><?php _e("Upload Videos",gallery_master)?>
-														</li>
-														<li>
-															<i class="icon icon-check"></i><?php _e("Widgets",gallery_master)?>
 														</li>
 														<li>
 															<i class="icon icon-close red-icon"></i><?php _e("Bulk Deletion",gallery_master)?>
@@ -146,9 +140,6 @@ else
 															<i class="icon icon-close red-icon"></i><?php _e("Support Multisite",gallery_master)?>
 														</li>
 														<li>
-															<i class="icon icon-check"></i><?php _e("Unlimited Albums",gallery_master)?>
-														</li>
-														<li>
 															<i class="icon icon-check"></i><?php _e("Unlimited Galleries",gallery_master)?>
 														</li>
 														<li>
@@ -180,9 +171,6 @@ else
 														</li>
 														<li>
 															<i class="icon icon-check"></i><?php _e("Upload Videos",gallery_master)?>
-														</li>
-														<li>
-															<i class="icon icon-check"></i><?php _e("Widgets",gallery_master)?>
 														</li>
 														<li>
 															<i class="icon icon-check"></i><?php _e("Bulk Deletion",gallery_master)?>
@@ -229,9 +217,6 @@ else
 															<span class="required" aria-required="true">*</span>
 														</li>
 														<li>
-															<i class="icon icon-check"></i><?php _e("Unlimited Albums",gallery_master)?>
-														</li>
-														<li>
 															<i class="icon icon-check"></i><?php _e("Unlimited Galleries",gallery_master)?>
 														</li>
 														<li>
@@ -263,9 +248,6 @@ else
 														</li>
 														<li>
 															<i class="icon icon-check"></i><?php _e("Upload Videos",gallery_master)?>
-														</li>
-														<li>
-															<i class="icon icon-check"></i><?php _e("Widgets",gallery_master)?>
 														</li>
 														<li>
 															<i class="icon icon-check"></i><?php _e("Bulk Deletion",gallery_master)?>
