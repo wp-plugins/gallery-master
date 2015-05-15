@@ -102,6 +102,51 @@ else
 			{
 				case "gallery_master":
 
+					$manage_gallery = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_master_meta(). " INNER JOIN ".gallery_master_galleries().
+							" ON ".gallery_master_galleries().".gallery_id = ".gallery_master_meta().".gallery_id WHERE "
+							.gallery_master_galleries().".parent_id = %d and ".gallery_master_galleries().".type = %s",
+							0,
+							"gallery"
+						)
+					);
+					$gallery_details = get_gallery_data($manage_gallery);
+
+				break;
+
+				case "gm_save_basic_details":
+
+					$count_galleries = $wpdb->get_var
+					(
+						$wpdb->prepare
+						(
+							"SELECT count(gallery_id) FROM ".gallery_master_galleries()." WHERE type = %s",
+							"gallery"
+						)
+					);
+					if(isset($_REQUEST["gallery_id"]))
+					{
+						$gallery_id = intval($_REQUEST["gallery_id"]);
+						$gallery_details = $wpdb->get_results
+						(
+							$wpdb->prepare
+							(
+								"SELECT * FROM " . gallery_master_meta () . " INNER JOIN " . gallery_master_galleries () .
+								" ON " . gallery_master_galleries () . ".gallery_id = " . gallery_master_meta () . ".gallery_id WHERE " . gallery_master_galleries () .
+								".gallery_id = %d ",
+								$gallery_id
+							)
+						);
+						$array_gallery_details = get_gallery_details($gallery_id,$gallery_details);
+					}
+
+				break;
+
+				case "gm_upload_media":
+
 					if(!function_exists("check_configuration"))
 					{
 						function check_configuration( $con = true, $x = "0", $y = "0" )
@@ -208,42 +253,6 @@ else
 					$max_files_time = ini_get( "max_input_time" );
 					if ( $max_files_time < "1" ) $max_files_time = __( "unknown", gallery_master );
 
-					$manage_gallery = $wpdb->get_results
-					(
-						$wpdb->prepare
-						(
-							"SELECT * FROM " . gallery_master_meta(). " INNER JOIN ".gallery_master_galleries().
-							" ON ".gallery_master_galleries().".gallery_id = ".gallery_master_meta().".gallery_id WHERE "
-							.gallery_master_galleries().".parent_id = %d and ".gallery_master_galleries().".type = %s",
-							0,
-							"gallery"
-						)
-					);
-					$gallery_details = get_gallery_data($manage_gallery);
-
-				break;
-
-				case "gm_save_basic_details":
-
-					if(isset($_REQUEST["gallery_id"]))
-					{
-						$gallery_id = intval($_REQUEST["gallery_id"]);
-						$gallery_details = $wpdb->get_results
-						(
-							$wpdb->prepare
-							(
-								"SELECT * FROM " . gallery_master_meta () . " INNER JOIN " . gallery_master_galleries () .
-								" ON " . gallery_master_galleries () . ".gallery_id = " . gallery_master_meta () . ".gallery_id WHERE " . gallery_master_galleries () .
-								".gallery_id = %d ",
-								$gallery_id
-							)
-						);
-						$array_gallery_details = get_gallery_details($gallery_id,$gallery_details);
-					}
-
-				break;
-
-				case "gm_upload_media":
 
 					$gallery_id = intval($_REQUEST["gallery_id"]);
 					$gallery_data = $wpdb->get_results

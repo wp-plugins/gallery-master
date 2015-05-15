@@ -106,7 +106,7 @@ else
 												$params = array(
 													"sslverify" 	=> false,
 													"timeout" 		=> 60,
-													"user-agent"	=> "Wp-Gallery-Bank",
+													"user-agent"	=> "Gallery-Master",
 													"body"			=> $request
 												);
 												$response = wp_remote_post( "https://www.paypal.com/cgi-bin/webscr", $params );

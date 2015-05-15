@@ -51,12 +51,19 @@ else
 						<span class="title"><?php _e("Galleries", gallery_master); ?></span>
 					</a>
 					<ul class="sub-menu">
-						<li id="ux_li_add_new_gallery">
-							<a href="admin.php?page=gm_save_basic_details">
-								<i class="icon-plus"></i>
-								<?php _e("Add New Gallery", gallery_master); ?>
-							</a>
-						</li>
+						<?php
+						if($count_img < 3)
+						{
+							?>
+							<li id="ux_li_add_new_gallery">
+								<a href="admin.php?page=gm_save_basic_details">
+									<i class="icon-plus"></i>
+									<?php _e("Add New Gallery", gallery_master); ?>
+								</a>
+							</li>
+							<?php
+						}
+						?>
 						<li id="ux_li_manage_galleries">
 							<a href="admin.php?page=gallery_master">
 								<i class="icon-layers"></i>

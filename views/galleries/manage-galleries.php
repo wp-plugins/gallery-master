@@ -47,10 +47,10 @@ else
 								<form id="ux_frm_manage_galleries">
 									<div class="form-body">
 										<div class="note note-warning">
-											<?php echo( sprintf( __( "<b>Notice:</b> Your server allows you to upload <b>%s</b> files of maximum total <b>%s</b> bytes and allows <b>%s</b> seconds to complete.", gallery_master ), $max_files_upload, $max_files_size, $max_files_time));?>
-											<?php _e( "<br />If your request exceeds these limitations, it will fail, probably without an errormessage.", gallery_master); ?>
-											<?php _e( "<br />Additionally your hosting provider may have set other limitations on uploading files.", gallery_master); ?>
-											<?php echo check_configuration();?>
+											<?php _e( "<p><b>Important Notice :</b></p>", gallery_master); ?>
+											<?php _e( "<p>You are using the Lite Edition of Gallery Master.</p>", gallery_master); ?>
+											<?php _e( "<p>Lite Edition offers 3 galleries and if you would like to enjoy unlimited galleries,<br/>", gallery_master); ?>
+											<?php _e( "please upgrade to the Premium Editions and enjoy unlimited access + advanced features.</p>", gallery_master); ?>
 										</div>
 										<div class="table-margin-top">
 											<select id="ux_ddl_bulk_action" name="ux_ddl_bulk_action" class="input-small">
@@ -58,7 +58,14 @@ else
 												<option value="delete" class="required"><?php _e("Delete", gallery_master); ?> (<?php _e("This feature is available in Pro Editions.", gallery_master);?>)</option>
 											</select>
 											<input type="button" id="ux_btn_apply" name="ux_btn_apply" onclick="bulk_delete();" class="btn red-sunglo" value="<?php _e("Apply", gallery_master); ?>">
-											<a href="admin.php?page=gm_save_basic_details" class="btn red-sunglo"><?php _e("Add New Gallery", gallery_master); ?></a>
+											<?php
+											if(count($gallery_details) < 3)
+											{
+												?>
+												<a href="admin.php?page=gm_save_basic_details" class="btn red-sunglo"><?php _e("Add New Gallery", gallery_master); ?></a>
+												<?php
+											}
+											?>
 										</div>
 										<table class="table table-striped table-bordered table-hover table-margin-top" id="tbl_manage_galleries">
 											<thead>

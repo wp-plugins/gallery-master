@@ -52,7 +52,7 @@ else
 															<span><?php _e("For WordPress Beginners",gallery_master)?></span>
 														</h3>
 														<h4>
-															<i>$</i><i>7</i>
+															<i>$</i><i>3</i>
 															<span><?php _e("Per Month",gallery_master)?></span>
 														</h4>
 													</div>
@@ -134,7 +134,7 @@ else
 														<h3><?php _e("Pro",gallery_master)?>
 															<span><?php _e("For Wordpress Pro Users",gallery_master)?></span>
 														</h3>
-														<h4><i>$</i><i>9</i>
+														<h4><i>$</i><i>5</i>
 															<span><?php _e("Per Month",gallery_master)?></span>
 														</h4>
 													</div>
@@ -216,13 +216,13 @@ else
 														<h3><?php _e("Developer",gallery_master)?>
 															<span><?php _e("Upto 5 Websites for Pro Users",gallery_master)?></span>
 														</h3>
-														<h4><i>$</i><i>29</i>
+														<h4><i>$</i><i>35</i>
 															<span><?php _e("Per Month",gallery_master)?></span>
 														</h4>
 													</div>
 													<ul class="pricing-content list-unstyled">
 														<li>
-															<i class="icon icon-check"></i><?php _e("For 5 Installations",gallery_master)?>
+															<i class="icon icon-check"></i><?php _e("For 10 Installations",gallery_master)?>
 														</li>
 														<li>
 															<i class="icon icon-check"></i><?php _e("Support Multisite",gallery_master)?>

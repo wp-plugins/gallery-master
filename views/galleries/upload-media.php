@@ -81,6 +81,13 @@ else {
 											<div style="width: 67%;" class="progress-bar progress-bar-success"></div>
 										</div>
 										<div class="line-separator"></div>
+										<div class="note note-warning">
+											<?php echo( sprintf( __( "<b>Notice:</b> Your server allows you to upload <b>%s</b> files of maximum total <b>%s</b> bytes and allows <b>%s</b> seconds to complete.", gallery_master ), $max_files_upload, $max_files_size, $max_files_time));?>
+											<?php _e( "<br />If your request exceeds these limitations, it will fail, probably without an errormessage.", gallery_master); ?>
+											<?php _e( "<br />Additionally your hosting provider may have set other limitations on uploading files.", gallery_master); ?>
+											<?php echo check_configuration();?>
+										</div>
+										<div class="line-separator"></div>
 										<div class="tabbable-custom">
 											<ul class="nav nav-tabs ">
 												<li class="active">

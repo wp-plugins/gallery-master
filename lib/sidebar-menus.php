@@ -51,21 +51,37 @@ else
 			case "editor":
 				add_menu_page("Gallery Master", __("Gallery Master", gallery_master), "read", "gallery_master", "", plugins_url("assets/admin/images/icon.png",dirname(__FILE__)));
 				add_submenu_page("gallery_master", "Dashboard", __("Dashboard", gallery_master), "read", "gallery_master","gallery_master");
+				add_submenu_page("", "", "", "read", "gm_save_basic_details", "gm_save_basic_details");
+				add_submenu_page("", "", "", "read", "gm_upload_media", "gm_upload_media");
+				add_submenu_page("", "", "", "read", "gm_save_gallery", "gm_save_gallery");
+				add_submenu_page("", "", "", "read", "gm_shortcode_generator", "gm_shortcode_generator");
+				add_submenu_page("", "", "", "read", "gm_feature_request", "gm_feature_request");
+				add_submenu_page("", "", "", "read", "gm_premium_editions", "gm_premium_editions");
+				add_submenu_page("", "", "", "read", "gm_system_information", "gm_system_information");
 			break;
 
 			case "author":
 				add_menu_page("Gallery Master", __("Gallery Master", gallery_master), "read", "gallery_master", "", plugins_url("assets/admin/images/icon.png",dirname(__FILE__)));
 				add_submenu_page("gallery_master", "Dashboard", __("Dashboard", gallery_master), "read", "gallery_master","gallery_master");
+				add_submenu_page("", "", "", "read", "gm_save_basic_details", "gm_save_basic_details");
+				add_submenu_page("", "", "", "read", "gm_upload_media", "gm_upload_media");
+				add_submenu_page("", "", "", "read", "gm_save_gallery", "gm_save_gallery");
+				add_submenu_page("", "", "", "read", "gm_shortcode_generator", "gm_shortcode_generator");
+				add_submenu_page("", "", "", "read", "gm_feature_request", "gm_feature_request");
+				add_submenu_page("", "", "", "read", "gm_premium_editions", "gm_premium_editions");
+				add_submenu_page("", "", "", "read", "gm_system_information", "gm_system_information");
 			break;
 
 			case "contributor":
 				add_menu_page("Gallery Master", __("Gallery Master", gallery_master), "read", "gallery_master", "", plugins_url("assets/admin/images/icon.png",dirname(__FILE__)));
 				add_submenu_page("gallery_master", "Dashboard", __("Dashboard", gallery_master), "read", "gallery_master","gallery_master");
-			break;
-
-			case "subscriber":
-				add_menu_page("Gallery Master", __("Gallery Master", gallery_master), "read", "gallery_master", "", plugins_url("assets/admin/images/icon.png",dirname(__FILE__)));
-				add_submenu_page("gallery_master", "Dashboard", __("Dashboard", gallery_master), "read", "gallery_master","gallery_master");
+				add_submenu_page("", "", "", "read", "gm_save_basic_details", "gm_save_basic_details");
+				add_submenu_page("", "", "", "read", "gm_upload_media", "gm_upload_media");
+				add_submenu_page("", "", "", "read", "gm_save_gallery", "gm_save_gallery");
+				add_submenu_page("", "", "", "read", "gm_shortcode_generator", "gm_shortcode_generator");
+				add_submenu_page("", "", "", "read", "gm_feature_request", "gm_feature_request");
+				add_submenu_page("", "", "", "read", "gm_premium_editions", "gm_premium_editions");
+				add_submenu_page("", "", "", "read", "gm_system_information", "gm_system_information");
 			break;
 		}
 		

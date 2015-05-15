@@ -97,7 +97,20 @@ else {
 										<div class="line-separator"></div>
 										<div class="form-actions">
 											<div class="btn-set pull-right" style="border-right: none;">
-												<button type="submit" class="btn red-sunglo" ><?php _e("Next Step >>",gallery_master)?></button>
+												<?php
+												if(isset($_REQUEST["gallery_id"]))
+												{
+													?>
+													<button type="submit" class="btn red-sunglo" ><?php _e("Next Step >>",gallery_master)?></button>
+													<?php
+												}
+												elseif($count_galleries < 3)
+												{
+													?>
+													<button type="submit" class="btn red-sunglo" ><?php _e("Next Step >>",gallery_master)?></button>
+													<?php
+												}
+												?>
 											</div>
 										</div>
 									</div>

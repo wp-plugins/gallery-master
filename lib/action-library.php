@@ -46,40 +46,51 @@ else
 						$description = esc_attr(html_entity_decode($_REQUEST["ux_gallery_desc"]));
 						$gallery_id = intval($_REQUEST["is_gallery_id"]);
 
+						$count_galleries = $wpdb->get_var
+						(
+							$wpdb->prepare
+							(
+								"SELECT count(gallery_id) FROM ".gallery_master_galleries()." WHERE type = %s",
+								"gallery"
+							)
+						);
+
 						if($gallery_id == "")
 						{
-							global $user_ID;
-							$array_insert_data = array ();
-
-							$array_insert_data["parent_id"] = 0;
-							$array_insert_data["type"] = "gallery";
-
-							echo $last_insert_id = $obj_save_data->insert_data(gallery_master_galleries(),$array_insert_data);
-
-							$array_insert_data = array ();
-							$where = array();
-
-							$array_insert_data["sorting_order"] = $last_insert_id;
-							$where["gallery_id"] = $last_insert_id;
-
-							$obj_save_data->update_data(gallery_master_galleries(),$array_insert_data,$where);
-
-							$array_insert_data = array();
-
-							$array_insert_data["gallery_title"] = $title;
-							$array_insert_data["gallery_description"] = $description;
-							$array_insert_data["edited_on"] = date("Y-m-d");
-							$array_insert_data["edited_by"] = $current_user->display_name;
-							$array_insert_data["author"] = $current_user->display_name;
-							$array_insert_data["gallery_date"] = date("Y-m-d");
-
-							foreach ($array_insert_data as $val => $innerKey)
+							if($count_galleries < 3)
 							{
-								$gallery_value = array();
-								$gallery_value["gallery_id"] = $last_insert_id;
-								$gallery_value["gallery_meta_key"] = $val;
-								$gallery_value["gallery_meta_value"] = $innerKey;
-								$obj_save_data->insert_data(gallery_master_meta(),$gallery_value);
+								$array_insert_data = array();
+
+								$array_insert_data["parent_id"] = 0;
+								$array_insert_data["type"] = "gallery";
+
+								echo $last_insert_id = $obj_save_data->insert_data(gallery_master_galleries(), $array_insert_data);
+
+								$array_insert_data = array();
+								$where = array();
+
+								$array_insert_data["sorting_order"] = $last_insert_id;
+								$where["gallery_id"] = $last_insert_id;
+
+								$obj_save_data->update_data(gallery_master_galleries(), $array_insert_data, $where);
+
+								$array_insert_data = array();
+
+								$array_insert_data["gallery_title"] = $title;
+								$array_insert_data["gallery_description"] = $description;
+								$array_insert_data["edited_on"] = date("Y-m-d");
+								$array_insert_data["edited_by"] = $current_user->display_name;
+								$array_insert_data["author"] = $current_user->display_name;
+								$array_insert_data["gallery_date"] = date("Y-m-d");
+
+								foreach ($array_insert_data as $val => $innerKey)
+								{
+									$gallery_value = array();
+									$gallery_value["gallery_id"] = $last_insert_id;
+									$gallery_value["gallery_meta_key"] = $val;
+									$gallery_value["gallery_meta_value"] = $innerKey;
+									$obj_save_data->insert_data(gallery_master_meta(), $gallery_value);
+								}
 							}
 						}
 						else
