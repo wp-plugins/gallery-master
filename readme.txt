@@ -85,7 +85,7 @@ Please email all your queries/issues at support@tech-prodigy.org
 = 1.0.2 (15th May 2015) =
 
 * Few Urgent Bugs Fixed
-* Message to show Maxium size of Imges for Uploading shown.
+* Message to show Maximum size of Images for Uploading shown.
 * Pricing Section Updated.
 
 = 1.0.1 (14th May 2015) =
