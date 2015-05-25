@@ -3,7 +3,7 @@
 Plugin Name: Gallery Master Lite Edition
 Plugin URI: http://tech-prodigy.org
 Description: Gallery Master is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
-Version: 1.0.5
+Version: 1.0.6
 Author: techprodigy
 Author URI: http://tech-prodigy.org
 */
@@ -78,7 +78,39 @@ if(!function_exists("plugin_install_script_for_gallery_master"))
 {
 	function plugin_install_script_for_gallery_master()
 	{
+		global $wpdb,$current_user,$user_role_permission;
 
+		if(is_super_admin())
+		{
+			$gm_role = "administrator";
+		}
+		else
+		{
+			$gm_role = $wpdb->prefix . "capabilities";
+			$current_user->role = array_keys($current_user->$gm_role);
+			$gm_role = $current_user->role[0];
+		}
+
+		if (is_multisite())
+		{
+			$blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
+			foreach($blog_ids as $blog_id)
+			{
+				switch_to_blog($blog_id);
+				if(file_exists(GALLERY_MASTER_BK_PLUGIN_DIR. "lib/install-script.php"))
+				{
+					include GALLERY_MASTER_BK_PLUGIN_DIR . "lib/install-script.php";
+				}
+				restore_current_blog();
+			}
+		}
+		else
+		{
+			if (file_exists(GALLERY_MASTER_BK_PLUGIN_DIR . "lib/install-script.php"))
+			{
+				include_once GALLERY_MASTER_BK_PLUGIN_DIR . "lib/install-script.php";
+			}
+		}
 	}
 }
 

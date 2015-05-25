@@ -700,7 +700,7 @@ else {
 
 							jQuery("#ux_txt_generated_shortcode").css("display","block");
 							var shortcode = "[gallery_master theme=\""+theme_view+"\" source_type=\""+display+"\" "+disp+" gallery_type=\""+gallery_type+"\" "+show+" "+desc+" lightbox=\""+lightbox+"\" order_by=\""+order_by+"\"] [/gallery_master]";
-							jQuery("#ux_txtarea_generated_shortcode").html(shortcode);
+							jQuery("#ux_txtarea_generated_shortcode").val(shortcode);
 						}
 					});
 					<?php
