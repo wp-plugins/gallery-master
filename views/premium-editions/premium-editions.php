@@ -193,7 +193,7 @@ else
 													</ul>
 													<div class="pricing-footer">
 														<a target="_blank" href="http://tech-prodigy.org/product/gallery-master-pro-edition/" class="btn red-sunglo">
-															<?php _e("Oreder Now",gallery_master)?> <i class="m-icon-swapright m-icon-white"></i>
+															<?php _e("Order Now",gallery_master)?> <i class="m-icon-swapright m-icon-white"></i>
 														</a>
 													</div>
 												</div>

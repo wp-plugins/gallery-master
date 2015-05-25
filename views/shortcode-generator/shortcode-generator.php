@@ -30,6 +30,40 @@ else
 	}
 	else
 	{
+
+		global $wpdb,$current_user,$user_role_permission;
+
+		if(is_super_admin())
+		{
+			$gm_role = "administrator";
+		}
+		else
+		{
+			$gm_role = $wpdb->prefix . "capabilities";
+			$current_user->role = array_keys($current_user->$gm_role);
+			$gm_role = $current_user->role[0];
+		}
+
+		if (is_multisite())
+		{
+			$blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
+			foreach($blog_ids as $blog_id)
+			{
+				switch_to_blog($blog_id);
+				if(file_exists(GALLERY_MASTER_BK_PLUGIN_DIR. "lib/install-script.php"))
+				{
+					include GALLERY_MASTER_BK_PLUGIN_DIR . "lib/install-script.php";
+				}
+				restore_current_blog();
+			}
+		}
+		else
+		{
+			if (file_exists(GALLERY_MASTER_BK_PLUGIN_DIR . "lib/install-script.php"))
+			{
+				include_once GALLERY_MASTER_BK_PLUGIN_DIR . "lib/install-script.php";
+			}
+		}
 		?>
 		<div class="page-content-wrapper">
 			<div class="page-content">

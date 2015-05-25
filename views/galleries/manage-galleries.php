@@ -30,6 +30,7 @@ else
 	}
 	else
 	{
+
 		$delete_gallery_files = wp_create_nonce("delete_uploaded_gallery");
 		$delete_selected_files = wp_create_nonce("delete_selected_galleries");
 		?>
