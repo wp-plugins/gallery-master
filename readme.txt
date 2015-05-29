@@ -17,6 +17,8 @@ Gallery Master is an Advanced photo gallery plugin for creating pixel perfect ph
 
 * [Purchase Gallery Master](http://tech-prodigy.org/pricing/)
 
+* [Gallery Master Demos](http://tech-prodigy.org/demos/)
+
 **Create responsive and filterable portfolios with ease on your website.**
 
 **Gallery Master**  is an advanced wordpress plugin with a list of tools and options for adding and editing images for different views.
