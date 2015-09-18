@@ -52,8 +52,8 @@ else
 															<span><?php _e("For WordPress Beginners",gallery_master)?></span>
 														</h3>
 														<h4>
-															<i>$</i><i>3</i>
-															<span><?php _e("Per Month",gallery_master)?></span>
+															<i>$</i><i>13</i>
+															<span><?php _e("One Time",gallery_master)?></span>
 														</h4>
 													</div>
 													<ul class="pricing-content list-unstyled">
@@ -128,8 +128,8 @@ else
 														<h3><?php _e("Pro",gallery_master)?>
 															<span><?php _e("For Wordpress Pro Users",gallery_master)?></span>
 														</h3>
-														<h4><i>$</i><i>5</i>
-															<span><?php _e("Per Month",gallery_master)?></span>
+														<h4><i>$</i><i>18</i>
+															<span><?php _e("One Time",gallery_master)?></span>
 														</h4>
 													</div>
 													<ul class="pricing-content list-unstyled">
@@ -204,8 +204,8 @@ else
 														<h3><?php _e("Developer",gallery_master)?>
 															<span><?php _e("Upto 5 Websites for Pro Users",gallery_master)?></span>
 														</h3>
-														<h4><i>$</i><i>35</i>
-															<span><?php _e("Per Month",gallery_master)?></span>
+														<h4><i>$</i><i>99</i>
+															<span><?php _e("One Time",gallery_master)?></span>
 														</h4>
 													</div>
 													<ul class="pricing-content list-unstyled">

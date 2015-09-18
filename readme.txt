@@ -2,8 +2,8 @@
 Contributors: techprodigy
 Tags: add album, add gallery, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, comments, filterable gallery, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, fullscreen slider, galeri, galerie, Galleria, galleries, gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, gallery slider, image, image album, image gallery, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, media, multiple pictures, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photography, photos, photoset, picture, pictures, responsive, responsive gallery, responsive wordpress photo gallery, sidebar, Simple gallery, slide, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, upload images, upload photos, video gallery, videos, view images, view pictures, vimeo, watermarking, watermarks, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, youtube
 Requires at least: 3.4
-Tested up to: 4.3
-Stable tag: 1.0.10
+Tested up to: 4.3.1
+Stable tag: 1.0.11
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,11 +13,29 @@ Gallery Master is a photo gallery plugin for creating pixel perfect photo galler
 
 **Gallery Master** creates 100% responsive **Photo Galleries** in minutes. Easy to customize with various views.
 
-* [Gallery Master](http://tech-prodigy.org/)
+> #### **Live Demos - Gallery Master**
 
-* [Purchase Gallery Master](http://tech-prodigy.org/pricing/)
-
-* [Gallery Master Demos](http://tech-prodigy.org/demos/)
+> * [Gallery Master](http://tech-prodigy.org/)
+> * [Gallery Master Demos](http://tech-prodigy.org/demos/)
+> * [Demo Using Masonry Layout in Individual Images With Title Only](http://tech-prodigy.org/demos/masonry-layout-only-images-gallery-with-title-only/)
+> * [Demo Using Masonry Layout in Individual Images With Description Only](http://tech-prodigy.org/demos/masonry-layout-only-images-gallery-with-description-only/)
+> * [Demo Using Masonry Layout in Individual Images With Title & Description](http://tech-prodigy.org/demos/masonry-layout-only-images-gallery-with-title-and-description/)
+> * [Demo Using Masonry Layout in Individual Images Without Title & Description](http://tech-prodigy.org/demos/masonry-layout-only-images-gallery-without-title-and-description/)
+> * [Demo Using Masonry Layout in Extended Gallery With Title Only](http://tech-prodigy.org/demos/masonry-layout-extended-gallery-with-title-only/)
+> * [Demo Using Masonry Layout in Extended Gallery With Description Only ](http://tech-prodigy.org/gallery-demos/masonry-layout-extended-gallery-with-description-only/)
+> * [Demo Using Masonry Layout in Extended Gallery With Title & Description](http://tech-prodigy.org/demos/masonry-layout-extended-gallery-with-title-and-description/)
+> * [Demo Using Masonry Layout in Extended Gallery Without Title & Description](http://tech-prodigy.org/demos/masonry-layout-extended-gallery-without-title-and-description/)
+> * [Demo Using Masonry Layout in Compact Gallery](http://tech-prodigy.org/demos/masonry-layout-compact-gallery/)
+> * [Demo Using Thumbnail Layout in Individual Images With Title Only](http://tech-prodigy.org/demos/thumbnail-layout-only-images-gallery-with-title-only/)
+> * [Demo Using Thumbnail Layout in Individual Images With Description Only](http://tech-prodigy.org/demos/thumbnail-layout-only-images-gallery-with-description-only/)
+> * [Demo Using Thumbnail Layout in Individual Images With Title & Description](http://tech-prodigy.org/demos/thumbnail-layout-only-images-gallery-with-title-and-description/)
+> * [Demo Using Thumbnail Layout in Individual Images Without Title & Description](http://tech-prodigy.org/demos/thumbnail-layout-only-images-gallery-without-title-and-description/)
+> * [Demo Using Thumbnail Layout in Extended Gallery With Title Only](http://tech-prodigy.org/demos/thumbnail-layout-extended-gallery-with-title-only/)
+> * [Demo Using Thumbnail Layout in Extended Gallery With Description Only](http://tech-prodigy.org/thumbnail-layout-extended-gallery-with-description-only/)
+> * [Demo Using Thumbnail Layout in Extended Gallery With Title & Description](http://tech-prodigy.org/demos/thumbnail-layout-extended-gallery-with-title-and-description/)
+> * [Demo Using Thumbnail Layout in Extended Gallery Without Title & Description](http://tech-prodigy.org/demos/thumbnail-layout-extended-gallery-without-title-and-description/)
+> * [Demo Using Thumbnail Layout in Compact Gallery](http://tech-prodigy.org/demos/thumbnail-layout-compact-gallery/)
+> * [Purchase Gallery Master](http://tech-prodigy.org/pricing/)
 
 **Create responsive and filterable portfolios with ease on your website.**
 
@@ -83,6 +101,12 @@ Please email all your queries/issues at support@tech-prodigy.org
 2. Activate the plugin using the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.0.11 (18th September 2015) =
+
+* Minor Bugs Fixed.
+* Rss Fix Applied
+* Pricing Changed
 
 = 1.0.10 (10th September 2015) =
 
