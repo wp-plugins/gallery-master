@@ -1,6 +1,6 @@
 === Gallery Master - Responsive Photo Galleries & Albums ===
 Contributors: techprodigy
-Tags: add album, add gallery, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, comments, filterable gallery, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, fullscreen slider, galeri, galerie, Galleria, galleries, gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, gallery slider, image, image album, image gallery, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, media, multiple pictures, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photography, photos, photoset, picture, pictures, responsive, responsive gallery, responsive wordpress photo gallery, sidebar, Simple gallery, slide, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, upload images, upload photos, video gallery, videos, view images, view pictures, vimeo, watermarking, watermarks, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, youtube
+Tags: admin, add album, add gallery, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, comments, filterable gallery, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, fullscreen slider, galeri, galerie, Galleria, galleries, gallery, gallery decription, gallery image, gallery lightbox, gallery shortcode, gallery slider, image, image album, image gallery, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, media, multiple pictures, photo, photo album, photo albums, photo gallery, photoalbum, photogallery, photography, photos, photoset, picture, pictures, responsive, responsive gallery, responsive wordpress photo gallery, sidebar, Simple gallery, slide, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, upload images, upload photos, video gallery, videos, view images, view pictures, vimeo, watermarking, watermarks, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wp gallery, wp gallery plugins, youtube
 Requires at least: 3.4
 Tested up to: 4.3.1
 Stable tag: 1.0.11
@@ -12,6 +12,14 @@ Gallery Master is a photo gallery plugin for creating pixel perfect photo galler
 == Description ==
 
 **Gallery Master** creates 100% responsive **Photo Galleries** in minutes. Easy to customize with various views.
+
+If you are looking for an effective, reliable, yet simple to use photo gallery plugin, then you will love this one!
+
+Gallery Master is the Most Easy and Powerful plugin to create a gallery on WordPress.
+
+You can make the required customizations for the view in the shortcode in advance to adding in the posts/pages.
+
+Just download this Gallery and you'll not look for any other gallery anymore!
 
 > #### **Live Demos - Gallery Master**
 
@@ -90,6 +98,69 @@ Considering the large number of galleries in WordPress, Tech Prodigy will improv
 * Choose number of pictures to display in row
 * View pictures as a slide show and in a full size
 * Change background color
+
+Unlimited gallery options allow to choose different designs and styles, which make your gallery attractive for users.
+
+Gallery Master is the absolute easiest, fastest and most efficient gallery plugin for WordPress.
+
+You deserve a WordPress responsive gallery plugin that doesn't frustrate you as you use it - you want a WP gallery plugin that is actually a joy to use. 
+
+Gallery Master Plugin claim to be the best Plugin.
+
+Gallery master is now available in the following Languages:
+
+* Albanian (sq)
+* Arabic (ar)
+* Brazilian Portuguese (pt_BR)
+* Bulgarian (bg_BG)
+* Croatian (hr)
+* Chinese (zh_CN)
+* Chinese - Hong Kong (zh_HK)
+* Chinese - Singapore (zh_sg)
+* Chinese - Taiwan (zh_TW)
+* Chinese - (zh)
+* Czech (cs_CZ)
+* Danish (da_DK)
+* Dutch (nl_NL)
+* Dutch - Belgium (nl_BE)
+* English (en_GB)
+* English (en_US)
+* Estonian (et)
+* Finnish (fi)
+* French (fr_FR)
+* French - Belgium (fr_BE)
+* French - Canada (fr_CA)
+* French - Switzerland (fr_ch)
+* German (de_DE)
+* Greek (el)
+* Hebrew (he_IL)
+* Hungarian (hu_HU)
+* Indonesian (id_ID)
+* Italian (it_IT)
+* Japanese (ja)
+* Korean (ko_KR)
+* Malay Malaysia (ms_MY)
+* Polish (pl_PL)
+* Portuguese (pt_PT)
+* Romanian (ro_RO)
+* Russian (ru_RU)
+* Russian - Ukraine (ru_UA)
+* Serbian (sr_RS)
+* Slovenian (sl_SL)
+* Slovak (sk_SK)
+* Spanish - Chile (es_CL)
+* Spanish - Peru (es_PE)
+* Spanish - Puerto Rico (es_PR)
+* Spanish - Venezuela (es_VE)
+* Spanish - Columbia (es_CO)
+* Spanish - Spain (es_ES)
+* Swedish (sv_SE)
+* Turkish (tr_TR)
+* Thai (th)
+* Ukrainian (uk)
+
+If you think, that you found a bug in our Gallery master plugin or have any question contact us at [support@tech-prodigy.org]mailto:support@tech-prodigy.org
+
 
 = Technical support =
 
