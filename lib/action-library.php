@@ -121,39 +121,41 @@ else
 					{
 						$array_insert_data = array();
 						$helper_functions = new tech_prodigy_helper_functions();
-
 						$file_type = esc_attr($_REQUEST["ux_file_type"]);
 						$ux_img_target_name = $file_type == "image" ? esc_attr($_REQUEST["ux_img_target_name"]) : esc_attr(urldecode($_REQUEST["ux_img_target_name"]));
 						$upload_type = esc_attr($_REQUEST["upload_type"]);
 
+						$ext = $upload_type == "system_upload" ? $helper_functions->file_extension($ux_img_target_name) : "";
+
 						$helper_functions->process_file_uploading($ux_img_target_name,200,160);
+
+						if($file_type == "image" && $upload_type == "system_upload")
+						{
+							$image_name = explode(".",$ux_img_target_name);
+							$ux_img_target_name = $image_name[0].".".$ext;
+						}
 
 						$array_insert_data["parent_id"] = intval($_REQUEST["id"]);
 						$array_insert_data["type"] = "pic";
+
 						$last_insert_id = $obj_save_data->insert_data(gallery_master_galleries(),$array_insert_data);
 
 						$array_insert_data = array();
 						$where = array();
-
 						$array_insert_data["sorting_order"] = $last_insert_id;
 						$where["gallery_id"] = $last_insert_id;
-
 						$obj_save_data->update_data(gallery_master_galleries(),$array_insert_data,$where);
 
 						$array_insert_data = array();
-
 						$array_insert_data["image_title"] = $file_type == "image" ? ($upload_type == "wp_upload" ? esc_attr(html_entity_decode($_REQUEST["title"])) : "") : "";
 						$array_insert_data["image_description"] = $file_type == "image" ? ($upload_type == "wp_upload" ? esc_attr(html_entity_decode($_REQUEST["desc"])) : "") : "";
 						$array_insert_data["alt_text"] = $file_type == "image" ? ($upload_type == "wp_upload" ? esc_attr(html_entity_decode($_REQUEST["altText"])) : "") : "";
-
 						$array_insert_data["thumbnail_url"] = GALLERY_MASTER_UPLOAD_PATH."thumbs/".$ux_img_target_name;
 						$array_insert_data["image_name"] = esc_attr($_REQUEST["ux_image_name"]);
 						$array_insert_data["enable_redirect"] = 0;
 						$array_insert_data["redirect_url"] = "http://";
-
 						$array_insert_data["upload_url"] = $file_type == "image" ? GALLERY_MASTER_UPLOAD_PATH."uploads/".$ux_img_target_name : $ux_img_target_name;
 						$array_insert_data["exclude_image"] = 0;
-
 						foreach ($array_insert_data as $val => $innerKey)
 						{
 							$gallery_value = array();
@@ -162,7 +164,7 @@ else
 							$gallery_value["gallery_meta_value"] = $innerKey;
 							$obj_save_data->insert_data(gallery_master_meta(),$gallery_value);
 						}
-						echo $file_type == "image" ? ($upload_type == "wp_upload" ? $ux_img_target_name.",".$last_insert_id : $last_insert_id) : $last_insert_id;
+						echo $file_type == "image" ? ($upload_type == "wp_upload" ? $ux_img_target_name.",".$last_insert_id : $ux_img_target_name.",".$last_insert_id) : $last_insert_id;
 					}
 				break;
 

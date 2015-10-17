@@ -2678,126 +2678,24 @@
 		width: 900px;
 	}
 }
-.tooltip
-{
-	position: absolute;
-	z-index: 1070;
-	display: block;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 12px;
-	font-weight: normal;
-	line-height: 1.4;
-	visibility: visible;
-	filter: alpha(opacity=0);
-	opacity: 0;
-}
-.tooltip.in
-{
-	filter: alpha(opacity=90);
-	opacity: .9;
-}
-.tooltip.top
-{
-	padding: 5px 0;
-	margin-top: -3px;
-}
-.tooltip.right
-{
-	padding: 0 5px;
-	margin-left: 3px;
-}
-.tooltip.bottom
-{
-	padding: 5px 0;
-	margin-top: 3px;
-}
-.tooltip.left
-{
-	padding: 0 5px;
-	margin-left: -3px;
-}
-.tooltip-inner
-{
-	max-width: 400px;
-	padding: 3px 8px;
-	color: #fff;
-	text-align: center;
-	text-decoration: none;
-	background-color: #000;
-	border-radius: 4px;
-}
-.tooltip-arrow
-{
-	position: absolute;
-	width: 0;
-	height: 0;
-	border-color: transparent;
-	border-style: solid;
-}
-.tooltip.top .tooltip-arrow
-{
-	bottom: 0;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px 5px 0;
-	border-top-color: #000;
-}
-.tooltip.top-left .tooltip-arrow
-{
-	right: 5px;
-	bottom: 0;
-	margin-bottom: -5px;
-	border-width: 5px 5px 0;
-	border-top-color: #000;
-}
-.tooltip.top-right .tooltip-arrow
-{
-	bottom: 0;
-	left: 5px;
-	margin-bottom: -5px;
-	border-width: 5px 5px 0;
-	border-top-color: #000;
-}
-.tooltip.right .tooltip-arrow
-{
-	top: 50%;
-	left: 0;
-	margin-top: -5px;
-	border-width: 5px 5px 5px 0;
-	border-right-color: #000;
-}
-.tooltip.left .tooltip-arrow
-{
-	top: 50%;
-	right: 0;
-	margin-top: -5px;
-	border-width: 5px 0 5px 5px;
-	border-left-color: #000;
-}
-.tooltip.bottom .tooltip-arrow
-{
-	top: 0;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 0 5px 5px;
-	border-bottom-color: #000;
-}
-.tooltip.bottom-left .tooltip-arrow
-{
-	top: 0;
-	right: 5px;
-	margin-top: -5px;
-	border-width: 0 5px 5px;
-	border-bottom-color: #000;
-}
-.tooltip.bottom-right .tooltip-arrow
-{
-	top: 0;
-	left: 5px;
-	margin-top: -5px;
-	border-width: 0 5px 5px;
-	border-bottom-color: #000;
-}
+
+/* # Tooltips & popovers
+================================================== */
+
+.tooltip_tip { position: absolute; z-index: 10300; display: block; visibility: visible; padding: 5px; font-size: 11px; opacity: 0; filter: alpha(opacity=0); }
+.tooltip_tip.in { opacity: 0.8; filter: alpha(opacity=80); }
+.tooltip_tip.top { margin-top: -3px; }
+.tooltip_tip.right { margin-left: 3px; }
+.tooltip_tip.bottom { margin-top: 3px; }
+.tooltip_tip.left { margin-left: -3px; }
+.tooltip_tip-inner { max-width: 200px; padding: 3px 8px; color: #ffffff; text-align: center; text-decoration: none; background-color: #202020; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.tooltip_tip-arrow { position: absolute; width: 0; height: 0; border-color: transparent; border-style: solid; }
+.tooltip_tip.top .tooltip_tip-arrow { bottom: 0; left: 50%; margin-left: -5px; border-width: 5px 5px 0; border-top-color: #000000; }
+.tooltip_tip.right .tooltip_tip-arrow { top: 50%; left: 0; margin-top: -5px; border-width: 5px 5px 5px 0; border-right-color: #000000; }
+.tooltip_tip.left .tooltip_tip-arrow {  top: 50%; right: 0; margin-top: -5px; border-width: 5px 0 5px 5px; border-left-color: #000000; }
+.tooltip_tip.bottom .tooltip_tip-arrow { top: 0; left: 50%; margin-left: -5px; border-width: 0 5px 5px; border-bottom-color: #000000; }
+
+
 .clearfix:before,.clearfix:after,.dl-horizontal dd:before,.dl-horizontal dd:after,.container:before,.container:after,
 .container-fluid:before,.container-fluid:after,.row:before,.row:after,.form-horizontal .form-group:before,
 .form-horizontal .form-group:after,.btn-toolbar:before,.btn-toolbar:after,.btn-group-vertical > .btn-group:before,

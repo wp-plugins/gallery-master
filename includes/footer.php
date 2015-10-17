@@ -35,7 +35,7 @@ else {
 		?>
 		</div>
 		<script type="text/javascript">
-			jQuery(".tooltips").tooltip();
+			jQuery(".tooltips").tooltip_tip();
 			jQuery("li > a").parents("li").each(function ()
 			{
 				if (jQuery(this).parent("ul.page-sidebar-menu").size() === 1) {
@@ -240,7 +240,6 @@ else {
 							sortable: true,
 							dragdrop: true,
 							unique_names: true,
-							max_file_count: 20,
 							views: {
 								list: true,
 								thumbs: true,
@@ -267,8 +266,8 @@ else {
 									},
 									function(data)
 									{
-										var insert_id = jQuery.trim(data);
-										create_dynamic_tr(image_target_name,image_name,"","","",insert_id);
+										var result = data.split(",");
+										create_dynamic_tr(result[0],image_name,"","","",result[1]);
 										display_action();
 										load_sidebar_content();
 									});
@@ -747,7 +746,7 @@ else {
 						{
 							var icon = jQuery(element).parent(".input-icon").children("i");
 							icon.removeClass("fa-check").addClass("fa-warning");
-							icon.attr("data-original-title", error.text()).tooltip({"container": "body"});
+							icon.attr("data-original-title", error.text()).tooltip_tip({"container": "body"});
 						},
 						highlight: function (element)
 						{

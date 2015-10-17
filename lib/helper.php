@@ -3,8 +3,10 @@ if (!is_user_logged_in())
 {
 	return;
 }
-else {
-	switch ($gm_role) {
+else
+{
+	switch ($gm_role)
+	{
 		case "administrator":
 			$user_role_permission = "manage_options";
 		break;
@@ -25,7 +27,7 @@ else {
 			$user_role_permission = "read";
 		break;
 	}
-	
+
 	if (!current_user_can($user_role_permission))
 	{
 		return;
@@ -100,18 +102,45 @@ else {
 				function process_file_uploading($image, $width, $height)
 				{
 					$temp_image_path = GALLERY_MASTER_UPLOAD_DIR . $image;
-					$temp_image_name = $image;
+
+					$image_type = explode(".", $image);
+					$image = getimagesize($temp_image_path);
+					$new_image_ext = explode("/",$image["mime"]);
+					$ext = $new_image_ext[1] == "jpeg" ? "jpg" : $new_image_ext[1];
+					$obj = wp_get_image_editor($temp_image_path);
+					$image_name = basename($temp_image_path);
+					$old_image_ext = explode(".",$image_name);
+					$new_temp_name = $old_image_ext[0].".". $ext;
+
+					unlink($temp_image_path);
+					$temp_image_path = preg_replace("/".$old_image_ext[1]."/", $ext, $temp_image_path);
+					$obj->save($temp_image_path);
+
 					list(, , $temp_image_type) = getimagesize($temp_image_path);
-					if ($temp_image_type === NULL) {
+
+					if ($temp_image_type === NULL)
+					{
 						return false;
 					}
-					$uploaded_image_path = GALLERY_MASTER_UPLOAD_DIR . $temp_image_name;
+
+					$uploaded_image_path = GALLERY_MASTER_UPLOAD_DIR . basename($temp_image_path);
 					move_uploaded_file($temp_image_path, $uploaded_image_path);
-					$type = explode(".", $image);
-					$thumbnail_image_path = GALLERY_MASTER_THUMBS_DIR . preg_replace("{\\.[^\\.]+$}", "." . $type[1], $temp_image_name);
+					$type = explode(".", $image_name);
+
+					$thumbnail_image_path = GALLERY_MASTER_THUMBS_DIR . preg_replace("{\\.[^\\.]+$}", "." . $ext, $new_temp_name);
 
 					$result = $this->process_thumbs_generation($uploaded_image_path, $thumbnail_image_path, $width, $height);
 					return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
+				}
+
+
+				function file_extension($image)
+				{
+					$temp_image_path = GALLERY_MASTER_UPLOAD_DIR . $image;
+					$image = getimagesize($temp_image_path);
+					$new_image_ext = explode("/",$image["mime"]);
+					$ext = $new_image_ext[1] == "jpeg" ? "jpg" : $new_image_ext[1];
+					return $ext;
 				}
 
 				/**
@@ -128,20 +157,24 @@ else {
 
 				function process_thumbs_generation($source_image_path, $thumbnail_image_path, $imageWidth, $imageHeight)
 				{
-					list($source_image_width, $source_image_height, $source_image_type) = getimagesize($source_image_path);
-					$source_aspect_ratio = $source_image_width / $source_image_height;
-					if ($source_image_width > $source_image_height) {
+					list($source_image_width, $source_image_height, $source_image_type) = getimagesize($source_image_path);																$source_aspect_ratio = $source_image_width / $source_image_height;
+					if ($source_image_width > $source_image_height)
+					{
 						$real_height = $imageHeight;
 						$real_width = $imageHeight * $source_aspect_ratio;
-					} else if ($source_image_height > $source_image_width) {
+					} else if ($source_image_height > $source_image_width)
+					{
 						$real_height = $imageWidth / $source_aspect_ratio;
 						$real_width = $imageWidth;
-					} else {
+					}
+					else
+					{
 						$real_height = $imageHeight > $imageWidth ? $imageHeight : $imageWidth;
 						$real_width = $imageWidth > $imageHeight ? $imageWidth : $imageHeight;
 					}
 
-					if (function_exists("wp_get_image_editor")) {
+					if (function_exists("wp_get_image_editor"))
+					{
 						$thumb = wp_get_image_editor($source_image_path);
 						$thumb->resize($real_width * 2, $real_height * 2, true);
 						$thumb->save($thumbnail_image_path);
@@ -163,7 +196,8 @@ else {
 								$source_gd_image = imagecreatefrompng($source_image_path);
 							break;
 						}
-						if ($source_gd_image === false) {
+						if ($source_gd_image === false)
+						{
 							return false;
 						}
 						$thumbnail_gd_image = imagecreatetruecolor($real_width * 2, $real_height * 2);
