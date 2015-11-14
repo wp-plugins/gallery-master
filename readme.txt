@@ -3,7 +3,7 @@ Contributors: techprodigy
 Tags: photo, photo gallery, image gallery, video gallery, gallery, galleries,  wordpress gallery plugin, images gallery, album, photo albums, simple gallery, best gallery plugin, free photo gallery, wp gallery, wordpress gallery, website gallery, gallery shortcode, best gallery, picture, pictures, gallery slider, photo album, photogallery, widget gallery, image, images, photos,  gallery lightbox, photoset, wordpress photo gallery plugin, wp gallery plugins, responsive wordpress photo gallery, media, image album, filterable gallery, banner rotator, fullscreen gallery, fotogalerie, galleria, galerie, galeri, responsive gallery, add album,  add gallery, add pictures, fotoalbum, foto, gallery decription, multiple pictures, photoalbum, upload images, upload photos, view images, view pictures, admin, AJAX, comments, gallery image, image lightbox, image rotate, image slideshow, image slider, jquery, jquery gallery, slide show, slideshow, thumbnail, thumbnail view, thumbnails, thumbs, responsive, lightbox, photography, sidebar, slide, youtube, vimeo, videos, instagram, facebook, mosaic
 Requires at least: 3.4
 Tested up to: 4.3.1
-Stable tag: 1.0.18
+Stable tag: 1.0.19
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -49,7 +49,7 @@ Just download this Gallery and you'll not look for any other gallery anymore!
 
 **Gallery Master**  is an advanced wordpress plugin with a list of tools and options for adding and editing images for different views.
 
-It is fully responsive. The product includes plugin for adding image galleries and albums to posts and pages. 
+It is fully responsive. The product includes plugin for adding image galleries and albums to posts and pages.
 
 You can add images, providing detailed descriptions, organize the galleries into different albums.
 
@@ -62,14 +62,14 @@ Considering the large number of galleries in WordPress, Tech Prodigy will improv
 * Upoad any number of photos to each album in the gallery.
 * Add Single Gallery to your page or post using a shortcode.
 * Add a caption to each photo in the album.
-* Change the size of album cover thumbnails and photos in the album. 
-* Choose a number of pictures to display in one row in the gallery album. 
+* Change the size of album cover thumbnails and photos in the album.
+* Choose a number of pictures to display in one row in the gallery album.
 * View pictures as a slide show and in a full size.
 * 3 different Widgets: Display a single album, create a list of album links, display latest/random media
 * User-friendly AJAX admin
 * Upload different types of media
 
-= Gallery Master Pro Version = 
+= Gallery Master Pro Version =
 
 * Domain Installation (x1 change anytime)
 * Responsive Gallery
@@ -103,7 +103,7 @@ Unlimited gallery options allow to choose different designs and styles, which ma
 
 Gallery Master is the absolute easiest, fastest and most efficient gallery plugin for WordPress.
 
-You deserve a WordPress responsive gallery plugin that doesn't frustrate you as you use it - you want a WP gallery plugin that is actually a joy to use. 
+You deserve a WordPress responsive gallery plugin that doesn't frustrate you as you use it - you want a WP gallery plugin that is actually a joy to use.
 
 Gallery Master Plugin claim to be the best Plugin.
 
@@ -170,16 +170,20 @@ Please email all your queries/issues at support@tech-prodigy.org
 
 #### Thank you for your interest in Gallery Master.
 
-### Minimum requirements.  
-*   Wordpress 3.0+  
-*   PHP 5.x  
-*   MySQL 5.x  
+### Minimum requirements.
+*   Wordpress 3.0+
+*   PHP 5.x
+*   MySQL 5.x
 
 
 1. Upload the `gallery-master` folder to the directory `/wp-content/plugins/`.
 2. Activate the plugin using the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.0.19 (14th November 2015) =
+
+* Minor Bugs Fixed.
 
 = 1.0.18 (4th November 2015) =
 
